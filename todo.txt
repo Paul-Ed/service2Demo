@@ -1,0 +1,45 @@
+todo project plan
+
+18 Aug
+------
+
+- install git
+- git clone
+- maak veranderinge aan code
+- git add
+- git commit
+- git push
+
+- single page capture: app.html
+  binne in hom is daar 'n https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp
+  sien ook https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_tabs_dynamic&stacked=h
+
+- pull all the captured data from the fields and build a json object (wat ons wil stuur na node)
+    sien voorbeeld code in person.html
+
+- populate the screen (fields) with dummy data (that will come from server)
+    sien voorbeeld code in person.html
+
+
+25 Aug
+------
+- install Node JS
+    https://nodejs.org/en/
+cd /home/ehrhardt/Projects/service2/server
+npm install
+node server.js
+- lees meer oor restify (restify tutorial, restify getting started, restify basics, examples)
+- serve web pages from node (restify.serveStatic)
+- move dummy code to nodejs (sodat web page vir node vra vir antwoorde)
+  mock out call from web page with node
+
+1 Sept
+------
+
+
+8 Sept
+------
+
+
+11 Sept
+-------
