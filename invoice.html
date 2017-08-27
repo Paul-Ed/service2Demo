@@ -12,8 +12,9 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/select2.js"></script>
     <script>
+		
 		function addNewLine(){
-			
+		
                 var table = $("#invoiceTable")[0];
 
                 var existingRow = table.rows[1];
@@ -21,13 +22,23 @@
                 for (var i = 0; i < existingRow.cells.length; i++) {
                     var cell = existingRow.cells[i];
                     var newCell = newRow.insertCell();
-                    $(cell).clone().appendTo(newCell);
-                    
+					var copied = $(cell).children().first().clone();
+                    copied.appendTo(newCell);
+                    if(copied.hasClass("select2")){
+					 copied.select2();
+					}
                 }
-            
+            return newRow;
 		}
-		function populateInvoice(invoice){
+		function populateInvoice(invoice){			
 			console.log("invoice",invoice);
+			invoice.items.forEach(function(item){
+			console.log(item);
+			var line=addNewLine();
+			debugger;
+				$(line.cells[0]).children().first().select2().val(item.partNumber).trigger('change');
+			 
+			});
 			
 		}
 		
@@ -122,19 +133,19 @@
           <td width="14%" style="text-align: center">Labour Cost</td>
         </tr>
     <tr>
-          <td><select name="select2" id="partnumber" style="width: 200px;">
-              <option value="1234567890">1234567890</option>
-              <option value="1234567890">1234567890</option>
-              <option value="1234567890">1234567890</option>
+          <td><select class="select2" name="partnumber" style="width: 200px;">
+              <option value="X123">X123</option>
+              <option value="X777">X777</option>
+              <option value="Z555">Z555</option>
             </select></td>
-          <td><select name="description" id="discription" style="width: 530px;">
+          <td><select class="select2" name="discription" style="width: 530px;">
               <option value="Replace Brakes">Replace Brakes</option>
               <option value="Replace Brake Fluid">Replace Brake Fluid</option>
               <option value="New Battery">New Battery</option>
               <option value="Replace Pistons">Replace Pistons</option>
             </select></td>
           <td><span style="text-align: center">
-            <select name="select" id="qty" style="width: 100px;">
+            <select class="select" name="qty" style="width: 100px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
