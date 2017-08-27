@@ -26,17 +26,24 @@ function loadQuoteFromServer(id) {
             date: new Date(2016,7,6),
             items: [
                 {
-                    partNumber: "X123",
-                    description: "122",
-                    quantity: 2,
-                    labourUnits: 1.5,
-                    labourCost: 150.50
+                    partNumber: "Z555",
+                    description: "123",
+                    qty: 4,
+                    price: 1.5,
+                    labour: 150.50,
+                    vat: 130,
+                    discount: 30,
+                    total: 1000
+
                 }, {
                     partNumber: "X777",
-                    description: "123",
-                    quantity: 2,
-                    labourUnits: 0.5,
-                    labourCost: 350.50
+                    description: "122",
+                    qty: 2,
+                    price: 3000,
+                    labour: 350.50,
+                    vat: 110,
+                    discount: 10,
+                    total: 1000
                 }
             ],
             vat: 297.23,
