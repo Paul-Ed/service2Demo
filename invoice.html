@@ -35,10 +35,16 @@
 			console.log("invoice",invoice);
 			invoice.items.forEach(function(item){
 			console.log(item);
-			var line=addNewLine();
-			debugger;
+			var line = addNewLine();
+			;				
 				$(line.cells[0]).children().first().select2().val(item.partNumber).trigger('change');
-			 
+				$(line.cells[1]).children().first().select2().val(item.description).trigger('change');
+				$(line.cells[2]).children().first().select2().val(item.qty).trigger('change');
+				$("input", line.cells[3]).val(item.price);
+				$("input", line.cells[4]).val(item.labour);	
+				$("#vat").val(item.vat);
+				$("#discount").val(item.discount);
+				$("#total").val(item.total);
 			});
 			
 		}
@@ -58,17 +64,24 @@
           date: new Date(2016,7,6),
           items: [
             {
-              partNumber: "X123",
-              description: "Front Disk Brakes",
-              quantity: 2,
-              labourUnits: 1.5,
-              labourCost: 150.50
+              partNumber: "Z555",
+              description: "123",
+              qty: 4,
+              price: 1.5,
+              labour: 150.50,
+			  vat: 130,
+			  discount: 30,
+			  total: 1000
+			  
             }, {
               partNumber: "X777",
-              description: "Rear Drum Brakes",
-              quantity: 2,
-              labourUnits: 0.5,
-              labourCost: 350.50
+              description: "122",
+              qty: 2,
+              price: 3000,
+              labour: 350.50,
+			  vat: 110,
+			  discount: 10,
+			  total: 1000
             }
           ],
           vat: 297.23,
@@ -140,27 +153,27 @@
               <option value="Z555">Z555</option>
             </select></td>
           <td><select class="select2" name="discription" style="width: 530px;">
-              <option value="Replace Brakes">Replace Brakes</option>
-              <option value="Replace Brake Fluid">Replace Brake Fluid</option>
-              <option value="New Battery">New Battery</option>
-              <option value="Replace Pistons">Replace Pistons</option>
+              <option value="123">Replace Brakes</option>
+              <option value="122">Replace Brake Fluid</option>
+              <option value="121">New Battery</option>
+              <option value="120">Replace Pistons</option>
             </select></td>
-          <td><span style="text-align: center">
-            <select class="select" name="qty" style="width: 100px;">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+          <td>
+            <select class="select2" name="qty" style="width: 100px;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
           </select>
             </span></td>
-          <td><input type="text" name="textfield2"></td>
-          <td><input type="text" name="textfield3"></td>
+          <td><input type="text" name="price"></td>
+          <td><input type="text" name="labour"></td>
         </tr>
     <tr>
           <td><input name="Add New Line" type="button" id="addNewLine" title="Add New Line" value="+">
@@ -177,19 +190,19 @@
     <tr>
           <td>&nbsp;</td>
           <td>VAT:
-        R
-        <input type="number" name="number3" id="number3"></td>
+        
+        <input type="number" id="vat"</td>
         </tr>
     <tr>
           <td>&nbsp;</td>
-          <td>Discount: R
-        <input type="number" name="number2" id="number2"></td>
+          <td>Discount: 
+        <input type="number" id="discount"</td>
         </tr>
     <tr>
           <td width="85%">&nbsp;</td>
-          <td width="15%"><label for="number">Total:</label>
-        R
-        <input type="number" name="number" id="number"></td>
+          <td width="15%"><label for="total">Total:</label>
+        
+        <input type="number" name="number" id="total"></td>
         </tr>
   </tbody>
     </table>
