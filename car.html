@@ -20,10 +20,10 @@
 			car.registrationNumber=$("input[name='regNum']").val();
 			car.monthlyUsager=$("input[name='usage']").val();
 			car.odoMeterreading=$("input[name='reading']").val();
-			car.yearModel=$("input[name='yearModel']").val();
-			car.brandg=$("input[name='brand']").val();
-			car.fuel=$("input[name='fuel']").val();
-			car.usedNew=$("input[name='usedNew']").val();
+			car.yearModel=$("#yearModel").select2().val();
+			car.brand=$("#brand").select2().val();
+			car.fuel=$("#fuel").select2().val();
+			car.usedNew=$("#usedNew").select2().val();
 			car.range=$("input[name='range']").val();
 			car.model=$("input[name='model']").val();
 			console.log (car)
