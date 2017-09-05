@@ -1,4 +1,6 @@
 function searchOnServer(terms) {
+
+    //
     console.log("pretending to search for", terms);
     var resultList = [
         {

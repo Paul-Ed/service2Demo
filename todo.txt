@@ -28,10 +28,15 @@ todo project plan
 cd /home/ehrhardt/Projects/service2/server
 npm install
 node server.js
-- lees meer oor restify (restify tutorial, restify getting started, restify basics, examples)
-- serve web pages from node (restify.serveStatic)
-- move dummy code to nodejs (sodat web page vir node vra vir antwoorde)
-  mock out call from web page with node
+doen:
+--> restify server static files
+    sien http://restify.com/docs/plugins-api/#serve-static
+--> laai alle select2 data van server
+    sien http://select2.github.io/options.html#ajax
+--> doen ajax call vir search
+    sien https://api.jquery.com/jquery.get/
+    doen loadQuoteFromServer vir spesifieke id in url
+
 
 1 Sept
 ------

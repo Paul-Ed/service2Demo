@@ -22,5 +22,11 @@ function populatePerson(person) {
 }
 
 $(document).ready(function () {
-    $(".select2").select2();
+    // $(".select2").select2();
+    $("select[name='id_type']").select2({
+        ajax: {
+            url: '/getIdType',
+            delay: 250
+        }
+    });
 });
