@@ -91,6 +91,41 @@ server.get('/getRange', function(request, response, next) {
 
 });
 
+server.get('/getPartNumber', function(request, response, next) {
+    var range = [
+        {id:1, text: "1.6"},
+        {id:2, text: "2L"},
+        {id:3, text: "3LV6"},
+        {id:4, text: "1L"}
+    ];
+
+    response.send({results: range});
+
+});
+
+server.get('/getDescription', function(request, response, next) {
+    var range = [
+        {id:1, text: "Moersleutel"},
+        {id:2, text: "Bolt"},
+        {id:3, text: "Spring"},
+        {id:4, text: "Skroef"}
+    ];
+
+    response.send({results: range});
+
+});
+
+server.get('/getqty', function(request, response, next) {
+    var qty = [
+        {id:1, text: "1"},
+        {id:2, text: "2"},
+        {id:3, text: "3"},
+        {id:4, text: "4"}
+    ];
+
+    response.send({results: qty});
+
+});
 server.get('/search', function(request, response, next) {
     var resultList = [
         {
