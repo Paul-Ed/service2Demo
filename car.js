@@ -24,7 +24,32 @@ function populateCar(car) {
     $("#range").select2().val(car.range).trigger('change');
     $("#model").select2().val(car.model).trigger('change');
 }
-
 $(document).ready(function () {
-    $(".select2").select2();
+    // $(".select2").select2();
+    $("select[name='yearModel']").select2({
+        ajax: {
+            url: '/getyearmodel',
+            delay: 250
+			$("select[name='brand']").select2({
+        ajax: {
+            url: '/getbrand',
+            delay: 250
+			$("select[name='fuel']").select2({
+        ajax: {
+            url: '/fuel',
+            delay: 250
+			$("select[name='usedNew']").select2({
+        ajax: {
+            url: '/getusedNew',
+            delay: 250
+			$("select[name='range']").select2({
+        ajax: {
+            url: '/range',
+            delay: 250
+			$("select[name='model']").select2({
+        ajax: {
+            url: '/model',
+            delay: 250
+        }
+
 });
