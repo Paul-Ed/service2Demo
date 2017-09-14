@@ -10,22 +10,86 @@ var server = restify.createServer();
 
 var diedir = path.join(__dirname, "..");
 console.log("diedir", diedir);
-server.get(/\/webapp\/.*/, restify.plugins.serveStatic({
+server.get(/\/client\/.*/, restify.plugins.serveStatic({
     directory: diedir,
     default: 'app.html'
 }));
+
+server.get('/getYearModel', function(request, response, next) {
+    var idTypes = [];
+    var endYear = new Date().getFullYear();
+    var startYear = endYear  - 15;
+    for (var i = startYear; i <= endYear; i++) {
+        idTypes.push({
+            id:i,
+            text: ""+i
+        });
+    }
+
+    response.send({results: idTypes});
+
+});
+
 
 server.get('/getIdType', function(request, response, next) {
     var idTypes = [
         {id:1, text: "Passport"},
         {id:2, text: "ID"},
-        {id:3, text: "Drivers License"}
+        {id:3, text: "van server"},
+        {id:4, text: "Drivers License"}
     ];
 
     response.send({results: idTypes});
 
 });
 
+server.get('/getBrand', function(request, response, next) {
+    var arr = [
+        {id:1, text: "Corsa"},
+        {id:2, text: "BMW"},
+        {id:3, text: "Nissan"},
+        {id:4, text: "Opel"}
+    ];
+
+    response.send({results: arr});
+
+});
+
+
+server.get('/getModel', function(request, response, next) {
+    var model = [
+        {id:1, text: "Lite"},
+        {id:2, text: "C class"},
+        {id:3, text: "Hardbody"},
+        {id:4, text: "Benz"}
+    ];
+
+    response.send({results: model});
+
+});
+
+server.get('/getFuel', function(request, response, next) {
+    var model = [
+        {id:1, text: "Petrol"},
+        {id:2, text: "Diesel"}
+
+    ];
+
+    response.send({results: model});
+
+});
+
+server.get('/getRange', function(request, response, next) {
+    var range = [
+        {id:1, text: "1.6"},
+        {id:2, text: "2L"},
+        {id:3, text: "3LV6"},
+        {id:4, text: "1L"}
+    ];
+
+    response.send({results: range});
+
+});
 
 server.get('/search', function(request, response, next) {
     var resultList = [

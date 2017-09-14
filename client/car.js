@@ -26,30 +26,43 @@ function populateCar(car) {
 }
 $(document).ready(function () {
     // $(".select2").select2();
-    $("select[name='yearModel']").select2({
+
+
+
+
+    $("#yearModel").select2({
         ajax: {
-            url: '/getyearmodel',
-            delay: 250
-			$("select[name='brand']").select2({
-        ajax: {
-            url: '/getbrand',
-            delay: 250
-			$("select[name='fuel']").select2({
-        ajax: {
-            url: '/fuel',
-            delay: 250
-			$("select[name='usedNew']").select2({
-        ajax: {
-            url: '/getusedNew',
-            delay: 250
-			$("select[name='range']").select2({
-        ajax: {
-            url: '/range',
-            delay: 250
-			$("select[name='model']").select2({
-        ajax: {
-            url: '/model',
+            url: '/getYearModel',
             delay: 250
         }
+    });
+
+    $("#brand").select2({
+        ajax: {
+            url: '/getBrand',
+            delay: 250
+        }
+    });
+
+    $("#model").select2({
+        ajax: {
+            url: '/getModel',
+            delay: 250
+        }
+    });
+
+    $("#fuel").select2({
+        ajax: {
+            url: '/getFuel',
+            delay: 250
+        }
+    });
+
+    $("#range").select2({
+        ajax: {
+            url: '/getRange',
+            delay: 250
+        }
+    });
 
 });
