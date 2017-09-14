@@ -126,7 +126,63 @@ server.get('/getqty', function(request, response, next) {
     response.send({results: qty});
 
 });
-server.get('/search', function(request, response, next) {
+
+server.get(/^\/getQuote\//, function(request, response, next) {
+
+    var quote = {
+        person: {
+            firstName  : "Johannes",
+            lastName  : "Loper",
+            idType  : "1",
+            idNumber  : "667712029283",
+            address  : "123 Collet St, Alberton",
+            postalCode : "5566"
+        },
+        car: {
+            registrationNumber : "CX1234",
+            monthlyUsage : "2000",
+            odo : "120000",
+            yearModel : "2017",
+            brand : "1",
+            fuel : "1",
+            usedNew : "1",
+            range : "1",
+            model : "1"
+        },
+        invoice: {
+            date: new Date(2016,7,6),
+            items: [
+                {
+                    partNumber: 1,
+                    description: 2,
+                    qty: 4,
+                    price: 1.5,
+                    labour: 150.50,
+                    vat: 130,
+                    discount: 30,
+                    total: 1000
+
+                }, {
+                    partNumber: "X777",
+                    description: "122",
+                    qty: 2,
+                    price: 3000,
+                    labour: 350.50,
+                    vat: 110,
+                    discount: 10,
+                    total: 1000
+                }
+            ],
+            vat: 297.23,
+            discount: 97.23,
+            total: 2999.99
+        }
+    };
+
+    response.send(quote);
+});
+
+server.post('/search', function(request, response, next) {
     var resultList = [
         {
             id: 12345,

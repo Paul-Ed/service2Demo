@@ -25,10 +25,6 @@ function populateCar(car) {
     $("#model").select2().val(car.model).trigger('change');
 }
 $(document).ready(function () {
-    // $(".select2").select2();
-
-
-
 
     $("#yearModel").select2({
         ajax: {

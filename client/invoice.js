@@ -1,4 +1,5 @@
-function collectPerson() {
+function collectInvoice() {
+    // fix me
     var person = {};
     person.firstName = $("input[name='first_name']").val();
     person.lastName = $("input[name='last_name']").val();
@@ -69,15 +70,6 @@ $(document).ready(function () {
     $("select[name='discription']").select2(getAjax("getDescription"));
     $("select[name='qty']").select2(getAjax("getqty"));
 
-
-    var searchString = location.search;
-    if (searchString) {
-        var id = searchString.split("=")[1];
-        var quote = loadQuoteFromServer(id);
-        populateInvoice(quote.invoice);
-    }
-
-    console.log("hello");
     $("#addNewLine").on("click", addNewLine);
 
 

@@ -48,3 +48,16 @@ doen:
 
 11 Sept
 -------
+
+14 Sept
+-------
+ - populate select2 with options when setting the value
+ - invoice.js fix the collectInvoice
+ - jQuery validate
+ - calculate vat & total wanneer 'n mens die form ingevul
+ - make -> model, model list is dependent on what was selected in make  (select2?)
+ - print quote button na onder (langs save) - pdf ge-generate op server
+ - document upload & save
+ - delete line & add line net op invoice
+ - save/load van mongodb (mongo native vir nodejs)
+
